@@ -35,6 +35,7 @@ export class Game extends Phaser.Scene{
     setPhysics(){
         this.physics.world.setBoundsCollision(true, true, true, true);
         instances.Quarks.forEach(el => {
+            el.instance.setVelocity(el.properties.speed, randomRange(-this.centerY, this.centerY));
             el.instance.setBounce(0.5);
             el.instance.setCollideWorldBounds(true);
         });
